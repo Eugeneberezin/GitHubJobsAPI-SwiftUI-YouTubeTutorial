@@ -32,16 +32,13 @@ struct ContentView: View {
                                 Rectangle()
                                     .foregroundColor(Color(.systemBackground))
                                     .cornerRadius(12)
-                                    .shadow(color: Color.blue.opacity(0.3), radius: 6, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 6.0)
+                                    .shadow(color: Color.blue.opacity(0.3), radius: 6, x: 0.0, y: 6.0)
                                     .frame(width: 45, height: 50)
                                 Image(systemName: "doc.text.magnifyingglass")
                                     .font(.largeTitle)
                             }
                         })
                     }
-                    
-                       
-                       
                     
                 }
                 Spacer()
