@@ -45,8 +45,22 @@ struct ContentView: View {
 
                 
             }
+            .onAppear(perform: {
+                testAPI()
+            })
         }
 
+    }
+    
+    func testAPI() {
+        NetworkManager.shared.getJobs(description: "", location: "") { (result) in
+            switch result {
+            case .success(let jobs):
+                print(jobs)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 

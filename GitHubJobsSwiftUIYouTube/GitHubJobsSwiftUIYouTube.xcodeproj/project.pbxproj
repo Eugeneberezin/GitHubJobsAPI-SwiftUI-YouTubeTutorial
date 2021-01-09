@@ -13,6 +13,8 @@
 		057728CB259FE9350051423A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 057728CA259FE9350051423A /* Preview Assets.xcassets */; };
 		057728D4259FE9970051423A /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057728D3259FE9970051423A /* SearchBarView.swift */; };
 		057728D7259FEF360051423A /* DoubleSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057728D6259FEF360051423A /* DoubleSearchBarView.swift */; };
+		057728E625A938BF0051423A /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057728E525A938BF0051423A /* Job.swift */; };
+		057728EA25A939790051423A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057728E925A939790051423A /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		057728CC259FE9350051423A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		057728D3259FE9970051423A /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		057728D6259FEF360051423A /* DoubleSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleSearchBarView.swift; sourceTree = "<group>"; };
+		057728E525A938BF0051423A /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		057728E925A939790051423A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,8 @@
 		057728B7259FE9320051423A = {
 			isa = PBXGroup;
 			children = (
+				057728E825A939550051423A /* Managers */,
+				057728E425A938970051423A /* Data Model */,
 				057728C2259FE9320051423A /* GitHubJobsSwiftUIYouTube */,
 				057728C1259FE9320051423A /* Products */,
 			);
@@ -73,6 +79,22 @@
 				057728CA259FE9350051423A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		057728E425A938970051423A /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				057728E525A938BF0051423A /* Job.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		057728E825A939550051423A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				057728E925A939790051423A /* NetworkManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,10 +166,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				057728EA25A939790051423A /* NetworkManager.swift in Sources */,
 				057728C6259FE9320051423A /* ContentView.swift in Sources */,
 				057728D7259FEF360051423A /* DoubleSearchBarView.swift in Sources */,
 				057728D4259FE9970051423A /* SearchBarView.swift in Sources */,
 				057728C4259FE9320051423A /* GitHubJobsSwiftUIYouTubeApp.swift in Sources */,
+				057728E625A938BF0051423A /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
