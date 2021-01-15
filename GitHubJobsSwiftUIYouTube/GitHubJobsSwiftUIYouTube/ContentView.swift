@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var locationSearchTerm = ""
     @State private var positionSearchTerm = ""
     @State private var isEditing = false
+    @StateObject private var viewModel = JobsViewModel()
     
     var body: some View {
         NavigationView {
@@ -26,7 +27,7 @@ struct ContentView: View {
                     })
                     if isEditing {
                         Button(action: {
-                            //add code later
+                            viewModel.getJobs(description: positionSearchTerm, location: locationSearchTerm)
                         }, label: {
                             ZStack {
                                 Rectangle()
@@ -41,7 +42,11 @@ struct ContentView: View {
                     }
                     
                 }
-                Spacer()
+                List {
+                    ForEach(viewModel.jobs) { job in
+                        Text(job.title)
+                    }
+                }
 
                 
             }

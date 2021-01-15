@@ -15,6 +15,7 @@
 		057728D7259FEF360051423A /* DoubleSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057728D6259FEF360051423A /* DoubleSearchBarView.swift */; };
 		057728E625A938BF0051423A /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057728E525A938BF0051423A /* Job.swift */; };
 		057728EA25A939790051423A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057728E925A939790051423A /* NetworkManager.swift */; };
+		0577291E25B126A20051423A /* JobsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577291D25B126A20051423A /* JobsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		057728D6259FEF360051423A /* DoubleSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleSearchBarView.swift; sourceTree = "<group>"; };
 		057728E525A938BF0051423A /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		057728E925A939790051423A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0577291D25B126A20051423A /* JobsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		057728B7259FE9320051423A = {
 			isa = PBXGroup;
 			children = (
+				0577291C25B126870051423A /* ViewModel */,
 				057728E825A939550051423A /* Managers */,
 				057728E425A938970051423A /* Data Model */,
 				057728C2259FE9320051423A /* GitHubJobsSwiftUIYouTube */,
@@ -95,6 +98,14 @@
 				057728E925A939790051423A /* NetworkManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		0577291C25B126870051423A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0577291D25B126A20051423A /* JobsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 				057728D4259FE9970051423A /* SearchBarView.swift in Sources */,
 				057728C4259FE9320051423A /* GitHubJobsSwiftUIYouTubeApp.swift in Sources */,
 				057728E625A938BF0051423A /* Job.swift in Sources */,
+				0577291E25B126A20051423A /* JobsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
