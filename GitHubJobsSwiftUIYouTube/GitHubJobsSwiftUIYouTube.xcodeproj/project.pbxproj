@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053542F225BBBC620009ADCF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 053542F125BBBC620009ADCF /* SDWebImageSwiftUI */; };
+		053542F525BBBCC10009ADCF /* JobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053542F425BBBCC10009ADCF /* JobView.swift */; };
 		057728C4259FE9320051423A /* GitHubJobsSwiftUIYouTubeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057728C3259FE9320051423A /* GitHubJobsSwiftUIYouTubeApp.swift */; };
 		057728C6259FE9320051423A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057728C5259FE9320051423A /* ContentView.swift */; };
 		057728C8259FE9350051423A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 057728C7259FE9350051423A /* Assets.xcassets */; };
@@ -19,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		053542F425BBBCC10009ADCF /* JobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobView.swift; sourceTree = "<group>"; };
 		057728C0259FE9320051423A /* GitHubJobsSwiftUIYouTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubJobsSwiftUIYouTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		057728C3259FE9320051423A /* GitHubJobsSwiftUIYouTubeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubJobsSwiftUIYouTubeApp.swift; sourceTree = "<group>"; };
 		057728C5259FE9320051423A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				053542F225BBBC620009ADCF /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +50,7 @@
 		057728B7259FE9320051423A = {
 			isa = PBXGroup;
 			children = (
+				053542F425BBBCC10009ADCF /* JobView.swift */,
 				0577291C25B126870051423A /* ViewModel */,
 				057728E825A939550051423A /* Managers */,
 				057728E425A938970051423A /* Data Model */,
@@ -124,6 +129,9 @@
 			dependencies = (
 			);
 			name = GitHubJobsSwiftUIYouTube;
+			packageProductDependencies = (
+				053542F125BBBC620009ADCF /* SDWebImageSwiftUI */,
+			);
 			productName = GitHubJobsSwiftUIYouTube;
 			productReference = 057728C0259FE9320051423A /* GitHubJobsSwiftUIYouTube.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +159,9 @@
 				Base,
 			);
 			mainGroup = 057728B7259FE9320051423A;
+			packageReferences = (
+				053542F025BBBC620009ADCF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 057728C1259FE9320051423A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,6 +194,7 @@
 				057728D4259FE9970051423A /* SearchBarView.swift in Sources */,
 				057728C4259FE9320051423A /* GitHubJobsSwiftUIYouTubeApp.swift in Sources */,
 				057728E625A938BF0051423A /* Job.swift in Sources */,
+				053542F525BBBCC10009ADCF /* JobView.swift in Sources */,
 				0577291E25B126A20051423A /* JobsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		053542F025BBBC620009ADCF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		053542F125BBBC620009ADCF /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 053542F025BBBC620009ADCF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 057728B8259FE9320051423A /* Project object */;
 }

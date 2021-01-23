@@ -5,6 +5,7 @@
 //  Created by Eugene Berezin on 1/1/21.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
 
 struct ContentView: View {
@@ -12,6 +13,7 @@ struct ContentView: View {
     @State private var positionSearchTerm = ""
     @State private var isEditing = false
     @StateObject private var viewModel = JobsViewModel()
+    let gridItem = GridItem(.flexible(minimum: 300, maximum: 400), spacing: 5, alignment: .leading)
     
     var body: some View {
         NavigationView {
@@ -42,31 +44,30 @@ struct ContentView: View {
                     }
                     
                 }
-                List {
-                    ForEach(viewModel.jobs) { job in
-                        Text(job.title)
+                ScrollView {
+                    LazyVGrid(columns: [gridItem]) {
+                        if viewModel.jobs.isEmpty {
+                            Text("Looking for a job? \nPlease enter job title and location to see what's available. ")
+                                .italic()
+                                .font(.title)
+                                .padding()
+
+                        }
+                        ForEach(viewModel.jobs) { job in
+                            JobView(job: job, image: WebImage(url: URL(string: job.companyLogo ?? "")), buttonColor: .gray)
+                            
+                        }
                     }
                 }
 
+
                 
             }
-            .onAppear(perform: {
-                testAPI()
-            })
+
         }
 
     }
     
-    func testAPI() {
-        NetworkManager.shared.getJobs(description: "", location: "") { (result) in
-            switch result {
-            case .success(let jobs):
-                print(jobs)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
