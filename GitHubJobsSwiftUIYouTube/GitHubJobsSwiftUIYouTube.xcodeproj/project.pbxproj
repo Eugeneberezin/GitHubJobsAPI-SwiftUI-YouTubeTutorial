@@ -18,6 +18,8 @@
 		057728E625A938BF0051423A /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057728E525A938BF0051423A /* Job.swift */; };
 		057728EA25A939790051423A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057728E925A939790051423A /* NetworkManager.swift */; };
 		0577291E25B126A20051423A /* JobsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577291D25B126A20051423A /* JobsViewModel.swift */; };
+		05C947AE25C3A1AB0063774B /* Persistencemanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C947AD25C3A1AB0063774B /* Persistencemanager.swift */; };
+		05C947B125C3A48A0063774B /* SavedJobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C947B025C3A48A0063774B /* SavedJobs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		057728E525A938BF0051423A /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		057728E925A939790051423A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0577291D25B126A20051423A /* JobsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewModel.swift; sourceTree = "<group>"; };
+		05C947AD25C3A1AB0063774B /* Persistencemanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistencemanager.swift; sourceTree = "<group>"; };
+		05C947B025C3A48A0063774B /* SavedJobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedJobs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 		057728B7259FE9320051423A = {
 			isa = PBXGroup;
 			children = (
+				05C947B025C3A48A0063774B /* SavedJobs.swift */,
 				053542F425BBBCC10009ADCF /* JobView.swift */,
 				0577291C25B126870051423A /* ViewModel */,
 				057728E825A939550051423A /* Managers */,
@@ -101,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				057728E925A939790051423A /* NetworkManager.swift */,
+				05C947AD25C3A1AB0063774B /* Persistencemanager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -191,9 +197,11 @@
 				057728EA25A939790051423A /* NetworkManager.swift in Sources */,
 				057728C6259FE9320051423A /* ContentView.swift in Sources */,
 				057728D7259FEF360051423A /* DoubleSearchBarView.swift in Sources */,
+				05C947B125C3A48A0063774B /* SavedJobs.swift in Sources */,
 				057728D4259FE9970051423A /* SearchBarView.swift in Sources */,
 				057728C4259FE9320051423A /* GitHubJobsSwiftUIYouTubeApp.swift in Sources */,
 				057728E625A938BF0051423A /* Job.swift in Sources */,
+				05C947AE25C3A1AB0063774B /* Persistencemanager.swift in Sources */,
 				053542F525BBBCC10009ADCF /* JobView.swift in Sources */,
 				0577291E25B126A20051423A /* JobsViewModel.swift in Sources */,
 			);

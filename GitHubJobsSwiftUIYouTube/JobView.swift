@@ -8,6 +8,7 @@ import SDWebImageSwiftUI
 import SwiftUI
 
 struct JobView: View {
+    @EnvironmentObject var manager: PersistenceManager
     let job: Job
     var image = WebImage(url: URL(string: ""), options: .delayPlaceholder)
     var buttonColor: Color
@@ -53,7 +54,11 @@ struct JobView: View {
                 }
                 Spacer()
                 Button(action: {
-                    //add code later
+                    if !manager.savedItems.contains(job) {
+                        save()
+                    } else {
+                        delete()
+                    }
                 }, label: {
                     
                     Image(systemName: "star.fill")
@@ -67,6 +72,18 @@ struct JobView: View {
         }
         .padding(2)
         
+    }
+    
+    func save() {
+        if !manager.savedItems.contains(job) {
+            manager.savedItems.append(job)
+        }
+    }
+    
+    func delete() {
+        if manager.savedItems.contains(job) {
+            manager.savedItems.removeAll(where: {$0 == job})
+        }
     }
 }
 

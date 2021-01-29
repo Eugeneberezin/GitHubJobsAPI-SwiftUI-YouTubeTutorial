@@ -11,7 +11,21 @@ import SwiftUI
 struct GitHubJobsSwiftUIYouTubeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ContentView()
+                    .environmentObject(PersistenceManager.shared)
+                    .tabItem {
+                        Image(systemName: "doc.text.magnifyingglass")
+                    }
+                SavedJobs()
+                    .environmentObject(PersistenceManager.shared)
+                    .tabItem {
+                        Image(systemName: "text.badge.star")
+                    }
+                
+                
+            }
+            
         }
     }
 }
