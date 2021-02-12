@@ -14,6 +14,11 @@ struct ContentView: View {
     @State private var positionSearchTerm = ""
     @State private var isEditing = false
     @StateObject private var viewModel = JobsViewModel()
+    @State private var isAlertShowing = false
+    @State private var isNetworkAlertShowing = false
+    @State private var isActivityIndicatorShowing = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
     let gridItem = GridItem(.flexible(minimum: 300, maximum: 400), spacing: 5, alignment: .leading)
     
     var body: some View {
@@ -30,7 +35,7 @@ struct ContentView: View {
                     })
                     if isEditing {
                         Button(action: {
-                            viewModel.getJobs(description: positionSearchTerm, location: locationSearchTerm)
+                            fetchJobs(description: positionSearchTerm, location: locationSearchTerm)
                         }, label: {
                             ZStack {
                                 Rectangle()
@@ -42,10 +47,18 @@ struct ContentView: View {
                                     .font(.largeTitle)
                             }
                         })
+                        .alert(isPresented: $isNetworkAlertShowing, content: {
+                            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("Ok")))
+                        })
                     }
                     
                 }
                 ScrollView {
+                    if isActivityIndicatorShowing {
+                        ProgressView()
+                            .padding()
+                            .progressViewStyle(CircularProgressViewStyle.init(tint: Color(.systemBlue)))
+                    }
                     LazyVGrid(columns: [gridItem]) {
                         if viewModel.jobs.isEmpty {
                             VStack {
@@ -68,15 +81,68 @@ struct ContentView: View {
                             
                         }
                     }
+                    .alert(isPresented: $isAlertShowing, content: {
+                        Alert(title: Text("No jobs found"), message: Text("We couldn't find any jobs with your criteria, please try different location or position."), dismissButton: .default(Text("Ok")))
+                    })
+
+                    
                 }
 
 
                 
             }
+            
 
         }
+        .listOnlyView()
 
     }
+    
+    private func configureErrorAlert() {
+        if viewModel.dataErrorAlert {
+            alertTitle = "Something went wrong!"
+            if let message = NetworkError.data.errorDescription {
+                alertMessage = message
+            }
+        } else if viewModel.serverErrorAlert {
+            alertTitle = "There was a problem with the server."
+            if let message = NetworkError.serverError.errorDescription {
+                alertMessage = message
+            }
+        } else if viewModel.somethingWentWrongAlert {
+            alertTitle = "Something went wrong"
+            alertMessage = "Please try again"
+        } else if viewModel.notFoundAlert {
+            alertTitle = "Not found"
+            if let message = NetworkError.notFound.errorDescription {
+                alertMessage = message
+            }
+            
+        }
+ 
+    }
+    
+    private func fetchJobs(description: String, location: String) {
+        isActivityIndicatorShowing = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            isNetworkAlertShowing = viewModel.isAlertShowing
+            configureErrorAlert()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            viewModel.getJobs(description: description, location: location)
+            isActivityIndicatorShowing.toggle()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                if !viewModel.jobs.isEmpty {
+                    isNetworkAlertShowing = false
+                }
+                if viewModel.jobs.isEmpty && viewModel.isAlertShowing == false  {
+                    isAlertShowing = true
+                }
+            }
+        }
+        
+    }
+    
     
 }
 

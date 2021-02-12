@@ -9,6 +9,11 @@ import SwiftUI
 
 class JobsViewModel: ObservableObject {
     @Published var jobs = [Job]()
+    @Published var isAlertShowing = false
+    var dataErrorAlert = false
+    var somethingWentWrongAlert = false
+    var serverErrorAlert = false
+    var notFoundAlert = false
     
     init() {}
     
@@ -22,7 +27,27 @@ class JobsViewModel: ObservableObject {
 
                 }
             case .failure(let error):
-                print(error)
+                DispatchQueue.main.async {[weak self] in
+                    guard let self = self else {return}
+                    switch error {
+                    case .data:
+                        self.dataErrorAlert = true
+                        self.isAlertShowing = true
+                    case .invalidURL:
+                        self.somethingWentWrongAlert = true
+                        self.isAlertShowing = true
+                    case .serverError:
+                        self.serverErrorAlert = true
+                        self.isAlertShowing = true
+                    case .notFound:
+                        self.notFoundAlert = true
+                        self.isAlertShowing = true
+                    default:
+                        self.somethingWentWrongAlert = true
+                        self.isAlertShowing = true
+                    }
+                }
+                
             }
         }
     }

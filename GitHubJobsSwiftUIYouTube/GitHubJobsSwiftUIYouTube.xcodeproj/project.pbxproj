@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		052419DA25D60FFD00743CD8 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052419D925D60FFD00743CD8 /* View+Extension.swift */; };
 		053542F225BBBC620009ADCF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 053542F125BBBC620009ADCF /* SDWebImageSwiftUI */; };
 		053542F525BBBCC10009ADCF /* JobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053542F425BBBCC10009ADCF /* JobView.swift */; };
 		057728C4259FE9320051423A /* GitHubJobsSwiftUIYouTubeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057728C3259FE9320051423A /* GitHubJobsSwiftUIYouTubeApp.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		052419D925D60FFD00743CD8 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		053542F425BBBCC10009ADCF /* JobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobView.swift; sourceTree = "<group>"; };
 		057728C0259FE9320051423A /* GitHubJobsSwiftUIYouTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubJobsSwiftUIYouTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		057728C3259FE9320051423A /* GitHubJobsSwiftUIYouTubeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubJobsSwiftUIYouTubeApp.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				057728C9259FE9350051423A /* Preview Content */,
 				057728D3259FE9970051423A /* SearchBarView.swift */,
 				057728D6259FEF360051423A /* DoubleSearchBarView.swift */,
+				052419D925D60FFD00743CD8 /* View+Extension.swift */,
 			);
 			path = GitHubJobsSwiftUIYouTube;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				057728D4259FE9970051423A /* SearchBarView.swift in Sources */,
 				057728C4259FE9320051423A /* GitHubJobsSwiftUIYouTubeApp.swift in Sources */,
 				057728E625A938BF0051423A /* Job.swift in Sources */,
+				052419DA25D60FFD00743CD8 /* View+Extension.swift in Sources */,
 				05C947AE25C3A1AB0063774B /* Persistencemanager.swift in Sources */,
 				053542F525BBBCC10009ADCF /* JobView.swift in Sources */,
 				0577291E25B126A20051423A /* JobsViewModel.swift in Sources */,
